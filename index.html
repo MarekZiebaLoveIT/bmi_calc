@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAADc3Nx5/Pz8+P39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//39/f/9/f3//f39//z8/Pjc3Nx5/f39+P////////////////j4+P+lpaX/oqKi/6Kiov+ioqL/oqKi/6ampv/4+Pj//////////////////Pz8+P39/f////////////////8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA//////////////////39/f/7+/v/////////////////AAAA///////p6en///////j4+P/29vb//////wAAAP/////////////////7+/v/8fHx/////////////////wAAAP/w8PD/ra2t/9ra2v/Nzc3/29vb//////8AAAD/////////////////8PDw//Hx8f////////////////8AAAD/8PDw/66urv/a2tr/zc3N/76+vv/x8fH/AAAA//////////////////Hx8f/19fX/////////////////AAAA///////p6en///////j4+P/09PT//////wAAAP/////////////////19fX/9fX1/////////////////wAAAP/x8fH/ubm5/9/f3//T09P/xsbG//Ly8v8AAAD/////////////////9fX1//X19f////////////////8AAAD/8PDw/6ysrP/Z2dn/zc3N/7q6uv/w8PD/AAAA//////////////////X19f/19fX/////////////////AAAA//z8/P/Ozs7/7Ozs/+Hh4f/Z2dn//Pz8/wAAAP/////////////////19fX/8vLy/////////////////wAAAP+8vLz/wcHB/8HBwf/BwcH/wcHB/76+vv8AAAD/////////////////8fHx//Hx8f////////////////8AAAD/////////////////////////////////AAAA//////////////////Dw8P/7+/v/////////////////AAAA/////////////////////////////////wAAAP/////////////////6+vr//Pz8/////////////////wAAAP9ubm7/dnZ2/3Z2dv92dnb/dnZ2/3BwcP8AAAD/////////////////+/v7//z8/Pj////////////////4+Pj/paWl/6Ghof+hoaH/oaGh/6Ghof+lpaX/+Pj4//////////////////z8/Pjc3Nx5+/v7+P39/f/8/Pz//Pz8//z8/P/8/Pz//Pz8//z8/P/8/Pz//Pz8//z8/P/9/f3//f39//v7+/jb29t5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Body Mass Index</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- logo BMI -->
+            <a href="index.html" id="logo">BMI</a>
+            <!-- Nawigacja z Menu -->
+            <ul class="navbar" id="navbar">
+                 <li class="item">
+                    <a href="#choose" class="links">Od początku!</a>
+                 </li>
+                 <li class="item">
+                     <a href="#indicators" class="links">Wskaźniki BMI</a>
+                 </li>
+                <li class="item">
+                     <a href="#how" class="links">Jak obliczyć BMI</a>
+                </li>
+                <a href="#" class="close">
+                    <img src="assets/img/close.png" alt="close">
+                </a>
+            </ul>
+            <a href="#navbar" class="hamburger">
+                <img src="assets/img/menu.png" alt="menu">
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Pierwsza strona -->
+
+        <section class="main" id="home">
+            <h1 class="top">OTO TWÓJ KALKULATOR BMI</h1>
+            <h4 class="upper">Kontrola indeksu BMI służy monitorowaniu stanu zdrowia naszego organizmu</h4>
+            <h4 class="bottom">Chcesz sprawdzić swoje BMI?</h4>
+            <a href="#choose" class="button" id="check">Sprawdź!</a>
+        </section>
+        <section class="bmi-icon">
+            <img src="assets/img/bmi.png" alt="bmi">
+        </section>
+
+        <!-- Druga strona - Liczenie BMI -->
+
+        <section class="choose" id="choose">
+            <form oninput="wynik.value = (w.value) / ((h.value/100)*(h.value/100))">
+                <p class="weight">Podaj swoją wagę w kilogramach:</p>
+                <input type="range" id="w" value="30" min="30" max="200" oninput="this.nextElementSibling.value = this.value">
+                <output>30</output><br>
+                <p class="height">Podaj swój wzrost w metrach:</p>
+                <input type="range" id="h" step="1" value="140" min="140" max="240" oninput="this.nextElementSibling.value = this.value">
+                <output>140</output><br>
+                <p class="sum">Twoje BMI to:</p>
+                <output id="wynik"></output><br>
+            </form>
+
+            <span class="secondbtn">
+                <a href="#indicators"></a>
+            </span>
+        </section>
+
+        <!-- Trzecia strona - Wskaźniki BMI-->
+
+        <section class="indicators" id="indicators">
+            <div class="bmiRes"></div>
+            <article class="result">
+                <div class="bmiClock">
+                     <img src="/assets/img/bmi_2.svg" alt="bmi-indicators">
+                </div>
+                <p class="small">Ważysz za mało! Niedowaga może osłabiać twój układ odpornościowy, a także zwiększać ryzyko wystąpienia osteoporozy i innych groźnych chorób. Porozmawiaj ze swoim lekarzem i spróbuj ustalić, jak osiągnąć prawidłową wagę i co jest przyczyną jej obecnego niedoboru. Aby polepszyć swoją kondycję: Potraktuj zdrowe nawyki żywieniowe jako styl życia; Wzbogacaj codzienne menu w owoce, warzywa oraz produkty pełnoziarniste; Ważnym elementem są także ćwiczenia fizyczne. Mogą one korzystnie wpłynąć na rozbudowę tkanki mięśniowej, a także na zwiększenie masy ciała.</p>
+                <p class="normal">Twoja waga jest prawidłowa! Aby ją utrzymać należy przede wszystkim: Wzbogacać dietę w warzywa, owoce oraz produkty pełnoziarniste; Regularnie ćwiczyć.</p>
+                <p class="high">Masz nadwagę! Porozmawiaj ze swoim lekarzem jaki sposób utraty zbędnych kilogramów będzie dla ciebie najlepszy. Potraktuj zdrowe nawyki żywieniowe jako styl życia: Wzbogacaj codzienne menu w owoce, warzywa i produkty pełnoziarniste; Ćwicz regularnie; Wyznacz sobie cel, czyli liczbę kilogramów do zrzucenia; Prowadź dzienniczek i zapisuj w nim plan treningów oraz codzienne menu.</p>
+            </article>
+            <input class="resetBtn" type="button" value="Reset">
+            <p class="last">Nieco niżej dowisz się jak liczyć BMI</p>
+        </section>
+
+        <!-- Czwarta strona - Jak liczyć -->
+
+        <section class="how" id="how">
+            <h3>Obliczanie BMI opiera się na wzięciu pod uwagę dwóch kluczowych informacji, których znajomość nie wymaga wykonywania żadnych badań lekarskich. W celu sprawdzenia, czy nasza masa ciała jest prawidłowa, musi uwzględnić wagę oraz wzrost. Wynik w kalkulatorze BMI otrzymywany jest poprzez podzielenie masy ciała podanej w kilogramach przez kwadrat wzrostu podanego w metrach. </h3>
+            <h3>Jeżeli wysokość naszego wskaźnika BMI budzi niepokój, warto skonsultować się z dietetykiem, który pomoże wprowadzić do naszej diety odpowiednie zmiany i zmienić nasz sposób odżywiania na lepsze.</h3>
+        </section>
+
+        <!-- Przycisk "W górę" -->
+
+        <a href="index.html" class="topbtn">
+            <img src="assets/img/upbtn.png" alt="backtotop">
+        </a>
+    </main>
+
+    <footer>
+        <p class="about"><span class="about">&copy;</span> 2021 by <strong>LoveIT</strong> Marek Zięba</p>
+    </footer>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <script src="js/script.js"></script>
+</body>
+</html>
